@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Kurale", serif;
+  --font-body: "Crimson Pro", serif;
+  --font-heading: "Playfair Display", serif;
+  --color-tavern-brown: #3e2723;
+  --color-tavern-brown-dark: #4e342e;
+  --color-tavern-brown-mid: #5d4037;
+  --color-tavern-brown-light: #8d6e63;
+  --color-tavern-cream: #f5f2ed;
+  --color-tavern-red: #b91c1c;
+  --color-tavern-border: #d7ccc8;
+}
+
+@layer base {
+  body {
+    @apply bg-tavern-cream text-tavern-brown font-body leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold text-tavern-brown;
+  }
+}
+
+.folk-pattern-header {
+  background-image: radial-gradient(circle, #b91c1c 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.folk-divider {
+  @apply flex items-center justify-center gap-4 py-8;
+}
+
+.folk-divider::before, .folk-divider::after {
+  content: "";
+  @apply h-px flex-1 bg-tavern-red/20;
+}
+
+.wood-texture {
+  background-color: #f5f2ed;
+  background-image: url("https://www.transparenttextures.com/patterns/wood-pattern.png");
+}
+
+.ornament-bg {
+  mask-image: url("https://www.transparenttextures.com/patterns/pinstripe-light.png");
+}
+
+.wood-border {
+  border-image: linear-gradient(to right, #3e2723, #5d4037, #3e2723) 1;
+}
