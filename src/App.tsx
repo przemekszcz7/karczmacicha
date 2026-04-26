@@ -25,27 +25,37 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen border-[12px] border-tavern-red relative wood-texture">
+    <div className="min-h-screen border-[16px] border-tavern-brown-dark relative wood-texture wood-plank">
       {/* Folk Pattern Header Accent */}
-      <div className="absolute top-0 left-0 w-full h-2 folk-pattern-header bg-repeat-x z-[60]"></div>
+      <div className="absolute top-0 left-0 w-full h-3 folk-pattern-header bg-repeat-x z-[60] brightness-90"></div>
+
+      {/* Banner Informacyjny */}
+      <div className="relative bg-tavern-red/90 text-white py-4 px-4 text-center z-40 border-b-4 border-tavern-brown-dark/20">
+        <div className="max-w-7xl mx-auto flex items-center justify-center gap-4 animate-pulse">
+          <Clock className="w-5 h-5 shrink-0" />
+          <p className="font-serif text-lg md:text-xl font-bold tracking-widest text-tavern-cream uppercase">
+            Wielkie Otwarcie: <span className="italic underline underline-offset-8">1 maja od godziny 12:00</span>
+          </p>
+        </div>
+      </div>
 
       {/* Navigation */}
-      <nav className="sticky top-0 w-full z-50 bg-tavern-cream/95 backdrop-blur-sm border-b border-tavern-border px-6 md:px-10 py-4 md:py-6">
+      <nav className="sticky top-0 w-full z-50 bg-tavern-cream/98 border-b-4 border-tavern-brown-dark px-6 md:px-10 py-3 md:py-5 shadow-2xl">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-4">
             <img 
               src="https://scontent-waw2-1.xx.fbcdn.net/v/t39.30808-6/646462755_26226968116934211_6740115487410581841_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=EptQZhOpwPUQ7kNvwFpdnqv&_nc_oc=AdpHHWbd2T5dIikLfffLa3AtC7tDsOoqXxx2wcJ--IOp2dVqlcy7Ne2sZ5urHtpFSeU&_nc_zt=23&_nc_ht=scontent-waw2-1.xx&_nc_gid=GJhUFCvt1sJjNob_9uooPQ&_nc_ss=7b2a8&oh=00_Af1M8PQII4DYg2GgyKWFqibUNjABVeecoOkkq3Yf3HQPtA&oe=69F37F69" 
-              className="w-12 h-12 md:w-20 md:h-20 rounded-full border-4 border-tavern-red shadow-xl" 
+              className="w-10 h-10 md:w-16 md:h-16 rounded-full border-2 border-tavern-brown-dark shadow-2xl" 
               alt="Logo" 
             />
             <div className="flex flex-col">
-              <h1 className="text-2xl md:text-5xl font-black tracking-tight text-tavern-red uppercase font-serif">
-                Karczma Cicha
+              <h1 className="text-xl md:text-4xl font-black tracking-tighter text-tavern-brown-dark uppercase font-serif">
+                Karczma <span className="text-tavern-red">Cicha</span>
               </h1>
-              <p className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-tavern-brown-light font-bold">Tradycja • Smak • Beskidy</p>
+              <p className="text-[8px] md:text-[10px] uppercase tracking-[0.4em] text-tavern-brown-light font-bold">Tradycja • Smak • Beskidy</p>
             </div>
           </div>
-          <div className="hidden md:flex gap-10 text-sm uppercase tracking-widest font-bold text-tavern-brown-mid">
+          <div className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-black text-tavern-brown-dark/70">
             <a href="#o-nas" className="hover:text-tavern-red transition-all border-b-2 border-transparent hover:border-tavern-red pb-1">Start</a>
             <a href="#region" className="hover:text-tavern-red transition-all border-b-2 border-transparent hover:border-tavern-red pb-1">Region</a>
             <a href="#smaki" className="hover:text-tavern-red transition-all border-b-2 border-transparent hover:border-tavern-red pb-1">Smaki</a>
@@ -56,24 +66,14 @@ export default function App() {
             href={FB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-tavern-red text-white p-3 rounded-full hover:scale-110 active:scale-95 transition-all duration-300 shadow-lg"
+            className="bg-tavern-brown-dark text-white p-2 md:p-3 rounded-md hover:scale-110 active:scale-95 transition-all duration-300 shadow-xl border-b-4 border-black/30"
           >
-            <Facebook className="w-6 h-6" />
+            <Facebook className="w-5 h-5 md:w-6 md:h-6" />
           </a>
         </div>
       </nav>
 
       <main>
-        {/* Banner Informacyjny */}
-        <div className="bg-tavern-red text-white py-4 px-4 text-center sticky top-[88px] md:top-[128px] z-40 border-b border-black/10">
-          <div className="max-w-7xl mx-auto flex items-center justify-center gap-4 animate-pulse">
-            <Clock className="w-6 h-6 shrink-0" />
-            <p className="font-serif text-xl md:text-2xl font-bold tracking-wide">
-              Wielkie Otwarcie: <span className="italic underline underline-offset-4">1 maja od godziny 12:00</span>
-            </p>
-          </div>
-        </div>
-
         {/* Hero Section */}
         <section id="o-nas" className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -91,24 +91,24 @@ export default function App() {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <div className="inline-block py-2 px-6 border-2 border-tavern-red text-tavern-red uppercase font-bold tracking-[0.3em] text-sm bg-white/10 backdrop-blur-md mb-4">
+                <div className="inline-block py-2 px-6 border-b-4 border-tavern-red text-tavern-red uppercase font-black tracking-[0.3em] text-xs bg-tavern-cream/80 backdrop-blur-md mb-4 shadow-xl">
                   Soblówka Zaprasza
                 </div>
-                <h2 className="text-5xl md:text-9xl font-black text-tavern-cream font-serif italic leading-tight">
+                <h2 className="text-6xl md:text-[10rem] font-black text-tavern-cream font-serif italic leading-[0.8] drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
                   Karczma <br />
-                  <span className="text-tavern-red not-italic">Cicha</span>
+                  <span className="text-tavern-red not-italic drop-shadow-none">Cicha</span>
                 </h2>
-                <div className="flex justify-center py-4">
-                  <div className="w-32 h-1 bg-tavern-red"></div>
+                <div className="flex justify-center py-6">
+                  <div className="w-48 h-1.5 bg-tavern-red/80 shadow-lg"></div>
                 </div>
                 <p className="text-xl md:text-3xl text-tavern-cream/90 font-serif leading-relaxed max-w-4xl mx-auto">
                   Mamy zaszczyt zaprosić Państwa do nowo otwartego miejsca na kulinarnej mapie Beskidów Żywieckich. Odkryj smak tradycji w nowoczesnym wydaniu.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-                   <a href="#kontakt" className="bg-tavern-red hover:bg-red-700 text-white px-10 py-5 rounded-sm font-bold uppercase tracking-widest shadow-2xl transition-all hover:-translate-y-1">
+                   <a href="#kontakt" className="bg-tavern-red hover:bg-tavern-red/90 text-white px-10 py-5 rounded-none font-black uppercase tracking-[0.2em] shadow-2xl transition-all hover:-translate-y-1 border-b-4 border-tavern-brown-dark/40">
                       Odwiedź nas
                    </a>
-                   <a href="#smaki" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border-2 border-white/30 px-10 py-5 rounded-sm font-bold uppercase tracking-widest transition-all">
+                   <a href="#smaki" className="bg-tavern-brown-dark/90 hover:bg-tavern-brown-dark text-tavern-cream border-2 border-tavern-cream/30 px-10 py-5 rounded-none font-black uppercase tracking-[0.2em] transition-all border-b-4 border-black/40">
                       Nasze Specjały
                    </a>
                 </div>
@@ -117,10 +117,8 @@ export default function App() {
         </section>
 
         {/* Section: Region */}
-        <section id="region" className="py-32 px-6 bg-[#fffdfa] relative overflow-hidden">
-          <div className="absolute top-0 right-0 opacity-5 pointer-events-none transform translate-x-1/2 -translate-y-1/2">
-             <Utensils className="w-96 h-96" />
-          </div>
+        <section id="region" className="py-32 px-6 bg-tavern-cream relative overflow-hidden wood-plank">
+          <div className="absolute top-0 right-0 opacity-10 pointer-events-none transform translate-x-1/2 -translate-y-1/2 ornament-bg w-[600px] h-[600px]"></div>
           
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
              <motion.div
@@ -128,13 +126,14 @@ export default function App() {
                whileInView={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8 }}
                viewport={{ once: true }}
+               className="bg-white/40 p-10 backdrop-blur-sm border-l-8 border-tavern-brown-dark shadow-xl"
              >
-                <h3 className="text-xl font-bold text-tavern-red mb-4 uppercase tracking-[0.5em]">U progu gór</h3>
-                <h2 className="text-5xl md:text-7xl font-serif font-black mb-8 italic text-tavern-brown">Lokalizacja pełna <br />spokoju</h2>
-                <p className="text-xl text-tavern-brown-mid mb-8 font-serif leading-loose">
+                <h3 className="text-base font-black text-tavern-red mb-4 uppercase tracking-[0.5em]">U progu gór</h3>
+                <h2 className="text-4xl md:text-6xl font-serif font-black mb-8 italic text-tavern-brown-dark leading-tight">Lokalizacja pełna <br />spokoju</h2>
+                <p className="text-lg md:text-xl text-tavern-brown-mid mb-8 font-serif leading-loose">
                   Soblówka to malownicza wieś położona u stóp góry Wielka Racza i Muńcuł. Nasza Karczma znajduje się w samym sercu tej spokojnej okolicy, gdzie czas płynie wolniej, a powietrze pachnie lasem i górami.
                 </p>
-                <p className="text-lg text-tavern-brown-light leading-relaxed italic border-l-4 border-tavern-red pl-6">
+                <p className="text-lg text-tavern-brown-light leading-relaxed italic border-l-4 border-tavern-red pl-6 bg-tavern-red/5 py-4">
                   "Miejsce, gdzie szlaki Beskidu Żywieckiego spotykają się z prawdziwym, domowym jadłem. Tutaj znajdziesz wytchnienie po górskiej wędrówce."
                 </p>
              </motion.div>
@@ -155,27 +154,33 @@ export default function App() {
         </section>
 
         {/* Section: Smaki */}
-        <section id="smaki" className="py-32 px-6 bg-tavern-brown-dark text-tavern-cream relative">
-           <div className="max-w-7xl mx-auto">
+        <section id="smaki" className="py-32 px-6 bg-tavern-brown-dark text-tavern-cream relative overflow-hidden">
+           <div className="absolute inset-0 ornament-bg opacity-10 pointer-events-none"></div>
+           <div className="max-w-7xl mx-auto relative z-10">
               <div className="text-center mb-20">
-                 <h2 className="text-5xl md:text-8xl font-serif italic mb-6">Tradycyjne Jadło</h2>
-                 <div className="folk-divider text-tavern-red">
-                    <Utensils className="w-10 h-10" />
+                 <h2 className="text-5xl md:text-9xl font-serif italic mb-6 drop-shadow-xl text-tavern-cream">Tradycyjne Jadło</h2>
+                 <div className="folk-divider text-tavern-red flex items-center justify-center">
+                    <div className="h-0.5 w-24 bg-tavern-red/30"></div>
+                    <Utensils className="w-12 h-12 mx-6 text-tavern-red shadow-lg" />
+                    <div className="h-0.5 w-24 bg-tavern-red/30"></div>
                  </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                 <div className="space-y-6 text-center p-8 border border-white/10 rounded-sm hover:border-tavern-red/50 transition-colors bg-white/5">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <div className="space-y-6 text-center p-10 border-b-8 border-tavern-red/40 rounded-none bg-tavern-cream/5 backdrop-blur-md shadow-2xl relative group overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-tavern-red/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                     <h4 className="text-3xl font-serif text-tavern-red italic">Kwaśnica na żeberku</h4>
-                    <p className="opacity-70">Tradycyjna, mocna, gotowana na wędzonym i domowej kapuście kiszonej.</p>
+                    <p className="opacity-70 font-serif text-lg leading-relaxed">Tradycyjna, mocna, gotowana na wędzonym i domowej kapuście kiszonej.</p>
                  </div>
-                 <div className="space-y-6 text-center p-8 border border-white/10 rounded-sm hover:border-tavern-red/50 transition-colors bg-white/5">
+                 <div className="space-y-6 text-center p-10 border-b-8 border-tavern-red/40 rounded-none bg-tavern-cream/5 backdrop-blur-md shadow-2xl relative group overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-tavern-red/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                     <h4 className="text-3xl font-serif text-tavern-red italic">Placek po Zbójnicku</h4>
-                    <p className="opacity-70">Chrupiący placek ziemniaczany z obfitym gulaszem i kleksem gęstej śmietany.</p>
+                    <p className="opacity-70 font-serif text-lg leading-relaxed">Chrupiący placek ziemniaczany z obfitym gulaszem i kleksem gęstej śmietany.</p>
                  </div>
-                 <div className="space-y-6 text-center p-8 border border-white/10 rounded-sm hover:border-tavern-red/50 transition-colors bg-white/5">
+                 <div className="space-y-6 text-center p-10 border-b-8 border-tavern-red/40 rounded-none bg-tavern-cream/5 backdrop-blur-md shadow-2xl relative group overflow-hidden">
+                    <div className="absolute top-0 left-0 w-full h-1 bg-tavern-red/20 scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
                     <h4 className="text-3xl font-serif text-tavern-red italic">Pstrąg z Potoku</h4>
-                    <p className="opacity-70">Świeży pstrąg pieczony w maśle z ziołami prosto z naszego ogródka.</p>
+                    <p className="opacity-70 font-serif text-lg leading-relaxed">Świeży pstrąg pieczony w maśle z ziołami prosto z naszego ogródka.</p>
                  </div>
               </div>
 
@@ -186,37 +191,37 @@ export default function App() {
         </section>
 
         {/* Gallery Section */}
-        <section id="galeria" className="py-32 px-6 bg-white">
+        <section id="galeria" className="py-32 px-6 bg-white wood-plank border-y-8 border-tavern-brown-dark">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-              <div>
-                <h3 className="text-xl font-bold text-tavern-red mb-2 uppercase tracking-[0.5em]">Widoki</h3>
-                <h2 className="text-5xl md:text-7xl font-serif font-black italic text-tavern-brown">Obrazy z Karczmy</h2>
+              <div className="bg-tavern-cream/50 p-6 border-l-4 border-tavern-red shadow-lg">
+                <h3 className="text-xs font-black text-tavern-red mb-2 uppercase tracking-[0.5em]">Widoki</h3>
+                <h2 className="text-4xl md:text-7xl font-serif font-black italic text-tavern-brown-dark">Obrazy z Karczmy</h2>
               </div>
-              <p className="max-w-md text-tavern-brown-light text-lg">Zajrzyj do środka i poczuj atmosferę, którą tworzymy z myślą o naszych gościach.</p>
+              <p className="max-w-md text-tavern-brown-light text-base md:text-xl font-serif italic">Zajrzyj do środka i poczuj atmosferę, którą tworzymy z myślą o naszych gościach.</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {IMAGES.map((img, idx) => (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.15 }}
+                  transition={{ delay: idx * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative overflow-hidden rounded-sm aspect-square shadow-xl cursor-pointer"
+                  className="group relative overflow-hidden rounded-none aspect-[3/4] shadow-2xl cursor-pointer border-4 border-white transform hover:rotate-1 transition-all"
                   onClick={() => setSelectedImage(img)}
                 >
                   <img
                     src={img}
                     alt={`Karczma Cicha ${idx + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-tavern-red/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4">
-                     <div className="w-16 h-16 border-2 border-white rotate-45 flex items-center justify-center">
-                        <ZoomIn className="w-8 h-8 text-white -rotate-45" />
+                  <div className="absolute inset-0 bg-tavern-brown-dark/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-4 backdrop-blur-[2px]">
+                     <div className="w-14 h-14 border border-tavern-cream rotate-45 flex items-center justify-center">
+                        <ZoomIn className="w-6 h-6 text-tavern-cream -rotate-45" />
                      </div>
-                     <p className="text-white font-bold uppercase tracking-widest text-xs">Powiększ</p>
+                     <p className="text-tavern-cream font-black uppercase tracking-[0.3em] text-[10px]">Powiększ obraz</p>
                   </div>
                 </motion.div>
               ))}
@@ -263,8 +268,9 @@ export default function App() {
         </AnimatePresence>
 
         {/* Contact & Map Section */}
-        <section id="kontakt" className="py-32 px-6 bg-tavern-cream border-t-8 border-tavern-red wood-texture">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 items-start w-full">
+        <section id="kontakt" className="py-32 px-6 bg-tavern-cream relative overflow-hidden wood-texture wood-plank">
+          <div className="absolute inset-0 ornament-bg opacity-[0.03] pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 lg:gap-20 items-start w-full relative z-10">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -272,39 +278,39 @@ export default function App() {
               viewport={{ once: true }}
               className="flex-1 w-full space-y-10"
             >
-              <div>
-                <h2 className="text-3xl md:text-5xl lg:text-6xl mb-6 font-black font-serif italic text-tavern-brown leading-tight">
+              <div className="bg-white/40 p-8 border-l-4 border-tavern-red shadow-xl">
+                <h2 className="text-3xl md:text-6xl mb-6 font-black font-serif italic text-tavern-brown-dark leading-tight">
                   Znajdź nas na <br />szlaku
                 </h2>
                 <p className="text-lg text-tavern-brown-mid font-serif leading-relaxed italic">
-                  Często bywamy w ruchu, przygotowując wszystko na otwarcie, więc najpewniejszą drogą kontaktu jest telefon.
+                  Czekamy na Państwa w Soblówce. W razie pytań zapraszamy do kontaktu telefonicznego – to najszybsza droga, by nas złapać.
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-6 bg-white border-b-4 border-tavern-red shadow-lg space-y-3 md:col-span-2">
-                   <Utensils className="w-6 h-6 text-tavern-red mb-1" />
-                   <h3 className="font-bold uppercase tracking-widest text-[10px] opacity-40">Wydarzenia</h3>
-                   <p className="text-lg md:text-xl font-serif italic text-tavern-brown">Organizujemy imprezy okolicznościowe</p>
-                   <p className="text-tavern-brown-mid text-sm opacity-80 leading-relaxed">Przygotujemy dla Państwa niezapomniane chrzciny, komunie, urodziny czy spotkania firmowe w wyjątkowym, góralskim klimacie.</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="p-8 bg-white/60 backdrop-blur-sm border-b-4 border-tavern-brown-dark shadow-xl space-y-4 md:col-span-2 hover:bg-white/80 transition-all">
+                   <Utensils className="w-8 h-8 text-tavern-red mb-2" />
+                   <h3 className="font-black uppercase tracking-[0.3em] text-[10px] opacity-40">Wydarzenia</h3>
+                   <p className="text-xl md:text-3xl font-serif italic text-tavern-brown-dark">Imprezy okolicznościowe</p>
+                   <p className="text-tavern-brown-mid text-base leading-relaxed font-serif">Chrzciny, komunie, urodziny czy biesiady firmowe – zorganizujemy je dla Państwa w prawdziwie góralskim stylu.</p>
                 </div>
 
-                <div className="p-6 bg-white border-b-4 border-tavern-red shadow-lg space-y-3">
-                   <MapPin className="w-6 h-6 text-tavern-red mb-1" />
-                   <h3 className="font-bold uppercase tracking-widest text-[10px] opacity-40">Gdzie jesteśmy</h3>
-                   <p className="text-lg font-serif italic text-tavern-brown">Soblówka 169a,<br />34-371 Ujsoły</p>
+                <div className="p-8 bg-white/60 backdrop-blur-sm border-b-4 border-tavern-brown-dark shadow-xl space-y-4 hover:bg-white/80 transition-all">
+                   <MapPin className="w-8 h-8 text-tavern-red mb-2" />
+                   <h3 className="font-black uppercase tracking-[0.3em] text-[10px] opacity-40">Lokalizacja</h3>
+                   <p className="text-xl font-serif italic text-tavern-brown-dark leading-loose">Soblówka 169a,<br />34-371 Ujsoły</p>
                 </div>
 
-                <div className="p-6 bg-tavern-brown-dark text-white border-b-4 border-tavern-red shadow-lg space-y-3">
-                   <Phone className="w-6 h-6 text-tavern-red mb-1" />
-                   <h3 className="font-bold uppercase tracking-widest text-[10px] opacity-40">Zadzwoń do nas</h3>
-                   <a href="tel:789440936" className="text-lg font-serif italic hover:text-tavern-red transition-colors block">789 440 936</a>
+                <div className="p-8 bg-tavern-brown-dark text-tavern-cream border-b-4 border-tavern-red shadow-xl space-y-4 hover:brightness-110 transition-all">
+                   <Phone className="w-8 h-8 text-tavern-red mb-2" />
+                   <h3 className="font-black uppercase tracking-[0.3em] text-[10px] opacity-40">Zadzwoń</h3>
+                   <a href="tel:789440936" className="text-2xl font-serif italic hover:text-tavern-red transition-colors block">789 440 936</a>
                 </div>
 
-                <div className="p-6 bg-white border-b-4 border-tavern-red shadow-lg space-y-3 md:col-span-2">
-                   <Mail className="w-6 h-6 text-tavern-red mb-1" />
-                   <h3 className="font-bold uppercase tracking-widest text-[10px] opacity-40">Napisz wiadomość</h3>
-                   <a href="mailto:karczmacicha@poczta.onet.pl" className="text-lg md:text-xl font-serif italic hover:text-tavern-red transition-all break-words text-tavern-brown">karczmacicha@poczta.onet.pl</a>
+                <div className="p-8 bg-white/60 backdrop-blur-sm border-b-4 border-tavern-brown-dark shadow-xl space-y-4 md:col-span-2 hover:bg-white/80 transition-all">
+                   <Mail className="w-8 h-8 text-tavern-red mb-2" />
+                   <h3 className="font-black uppercase tracking-[0.3em] text-[10px] opacity-40">Email</h3>
+                   <a href="mailto:karczmacicha@poczta.onet.pl" className="text-lg md:text-2xl font-serif italic hover:text-tavern-red transition-all break-words text-tavern-brown-dark">karczmacicha@poczta.onet.pl</a>
                 </div>
               </div>
 
